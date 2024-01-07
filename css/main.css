@@ -1,0 +1,546 @@
+*,
+::after,
+::before {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: var(--text-color);
+    text-align: left;
+    background-color: var(--body-bg-color);
+    ;
+    /* background-color: transparent; */
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+}
+
+.navbar {
+    background-color: transparent;
+    font-size: 0.875rem;
+    box-shadow: 0 2px 5px 0 rgba(0,0,0,0.16), 0 2px 10px 0 rgba(0,0,0,0.12);
+}
+
+.navbar.scrolling-navbar {
+    /* will-change: background, padding; */
+    transition: background 0.5s ease-in-out, padding 0.5s ease-in-out;
+}
+
+.navbar.scrolling-navbar.top-nav-collapse {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+ 
+.top-nav-collapse{
+    background-color: var(--navbar-bg-color);
+}
+
+.navbar-brand {
+    display: inline-block;
+    padding-top: .3125rem;
+    padding-bottom: .3125rem;
+    margin-right: 1rem;
+    font-size: 1.25rem;
+    line-height: inherit;
+    white-space: nowrap;
+}
+
+body a {
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+a {
+    background-color: transparent;
+}
+
+@media (max-width: 767px) {
+    .navbar {
+        font-size: 1rem;
+        line-height: 2.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+
+    /* 在宽度过小时采取隐藏式 */
+    .navbar-expand-lg .navbar-nav {
+        flex-direction: row;
+    }
+}
+
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+
+.navbar .container {
+    display: flex;
+    align-items: center;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    max-width: 1140px;
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.container,
+.container-fluid,
+.container-lg,
+.container-md,
+.container-sm,
+.container-xl {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.navbar-collapse {
+    display: flex !important;
+    flex-direction: row;
+    flex-grow: 1;
+    flex-basis: auto;
+    align-items: center;
+}
+
+.navbar-nav {
+    display: flex;
+    padding-left: 0;
+    margin-left: auto !important;
+    list-style: none;
+    margin-bottom: 0;
+}
+
+ul {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    padding-inline-start: 40px;
+}
+
+dl,
+ol,
+ul {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+.navbar .nav-item .nav-link {
+    display: block;
+    /* var能配合Javascript控制括号内变量来改变颜色 */
+    color: var(--navbar-text-color);
+    transition: color 0.2s ease-in-out, background-color 0.2s ease-in-out;
+}
+
+.navbar .nav-item .nav-link i {
+    font-size: 0.875rem;
+}
+
+i.iconfont {
+    font-size: 1em;
+    line-height: 1;
+}
+
+@media (min-width: 600px) {
+    .navbar.scrolling-navbar .navbar-nav>li {
+        -webkit-transition-duration: 1s;
+        transition-duration: 1s;
+    }
+}
+
+/*控制字体间距*/
+@media (min-width: 992px) {
+    .navbar-expand-lg .navbar-nav .nav-link {
+        /* 这里的root的基本就是1em，所以用em也可以 */
+        padding-right: .5rem;
+        padding-left: .5rem;
+    }
+}
+
+
+.nav-link {
+    /*这里对所有link所有方向都是0.5rem，但是其实上面对左右有特殊定义，所以这里只有上下生效*/
+    padding: .5rem
+}
+
+a {
+    color: #f9f9f9;
+    text-decoration: none;
+    background-color: transparent;
+}
+
+
+.banner {
+    height: 100%;
+    position: relative;
+    overflow: hidden;
+    cursor: default;
+}
+
+.banner .mask {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.3);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/*下面都是关于中间字符的*/
+.banner-text {
+    color: var(--subtitle-color);
+    max-width: calc(960px - 6rem);
+    width: 80%;
+    overflow-wrap: break-word;
+}
+
+
+.text-center {
+    text-align: center !important;
+}
+
+.fade-in-up {
+    animation-name: fade-in-up;
+}
+
+.scroll-down-bar {
+    position: absolute;
+    width: 100%;
+    height: 6rem;
+    text-align: center;
+    cursor: pointer;
+    bottom: 0;
+}
+
+.scroll-down-bar i.iconfont {
+    font-size: 2rem;
+    font-weight: bold;
+    display: inline-block;
+    position: relative;
+    padding-top: 2rem;
+    color: var(--subtitle-color);
+    transform: translateZ(0);
+    /*利用css来制作动画*/
+    /*动画名称，动画时长，动画次数*/
+    animation: scroll-down 1.5s infinite;
+}
+
+/* 设置不同帧数的动作形态 */
+@keyframes scroll-down {
+    0% {
+        opacity: 0.8;
+        top: 0;
+    }
+
+    50% {
+        opacity: 0.4;
+        top: -1em;
+    }
+
+    100% {
+        opacity: 0.8;
+        top: 0;
+    }
+}
+
+main {
+    display: block;
+}
+
+#board {
+    position: relative;
+    margin-top: -2rem;
+    padding: 3rem 0;
+    background-color: var(--board-bg-color);
+    transition: background-color 0.2s ease-in-out;
+    border-radius: 0.5rem;
+    z-index: 3;
+    -webkit-box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+    box-shadow: 0 12px 15px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+}
+
+
+.blog {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+
+
+
+
+.index-card {
+    margin-bottom: 2.5rem;
+}
+
+.index-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+}
+
+.index-header {
+    color: var(--text-color);
+    font-size: 1.5rem;
+    overflow: hidden;
+    /* 溢出以省略号表示 */
+    text-overflow: ellipsis;
+}
+
+.index-excerpt {
+    color: var(--sec-text-color);
+    margin: 0.5rem 0;
+    height: calc(1.4rem * 3);
+    overflow: hidden;
+    display: flex;
+}
+
+.index-excerpt>div {
+    width: 100%;
+    line-height: 1.4rem;
+    word-break: break-word;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
+}
+
+.index-btm {
+    color: var(--sec-text-color);
+}
+
+.post-metas {
+    display: flex;
+    flex-wrap: wrap;
+    font-size: 0.9rem;
+}
+
+
+
+#scroll-top-button {
+    position: fixed;
+    z-index: 99;
+    background: var(--board-bg-color);
+    transition: background-color 0.2s ease-in-out, bottom 0.3s ease;
+    border-radius: 4px;
+    min-width: 40px;
+    min-height: 40px;
+    bottom: -60px;
+    outline: none;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16), 0 2px 10px 0 rgba(0, 0, 0, 0.12);
+    cursor: pointer;
+}
+
+#scroll-top-button i {
+    font-size: 32px;
+    margin: auto;
+    color: var(--sec-text-color);
+}
+
+.footer-inner {
+    padding: 3rem 0 1rem 0;
+    text-align: center;
+}
+
+svg {
+    overflow: hidden;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*下面都是通俗设置*/
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    margin-bottom: .5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+
+.h2,
+h2 {
+    font-size: 2rem;
+}
+
+.mt-1, .my-1 {
+    margin-top: .25rem!important;
+}
+
+
+.mt-3, .my-3 {
+    margin-top: 1rem!important;
+}
+
+.m-auto {
+    margin: auto !important;
+}
+
+.mr-2, .mx-2 {
+    margin-right: .5rem!important;
+}
+.ml-auto,
+.mx-auto {
+    margin-left: auto !important;
+}
+
+.mr-auto,
+.mx-auto {
+    margin-right: auto !important;
+}
+
+.mr-3,
+.mx-3 {
+    margin-right: 1rem !important;
+}
+
+.ml-3,
+.mx-3 {
+    margin-left: 1rem !important;
+}
+
+.row {
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+@media (min-width: 600px) {
+    .navbar.scrolling-navbar {
+        padding-top: 12px;
+        padding-bottom: 12px;
+    }
+}
+
+@media (min-width: 1200px) {
+
+    .container,
+    .container-lg,
+    .container-md,
+    .container-sm,
+    .container-xl {
+        max-width: 1140px;
+    }
+}
+
+
+
+@media (min-width: 768px) {
+    .col-md-8 {
+        /* 注意下面两个中都有66.6666%。都是为了保证宽度和父容器的相对大小 */
+        flex: 0 0 66.666667%;
+        max-width: 66.666667%;
+    }
+}
+
+@media (min-width: 768px) {
+    .col-md-10 {
+        -ms-flex: 0 0 83.333333%;
+        flex: 0 0 83.333333%;
+        max-width: 83.333333%;
+    }
+}
+
+/* 设置黑夜白天模式所用 */
+@media not print {
+
+    /* [data-user-color-scheme="dark"] */
+    * {
+        --body-bg-color: #181c27;
+        --board-bg-color: #252d38;
+        --text-color: #c4c6c9;
+        --sec-text-color: #a7a9ad;
+        --post-text-color: #c4c6c9;
+        --post-heading-color: #c4c6c9;
+        --post-link-color: #1589e9;
+        --link-hover-color: #30a9de;
+        --link-hover-bg-color: #364151;
+        --line-color: #435266;
+        --navbar-bg-color: #1f3144;
+        --navbar-text-color: #d0d0d0;
+        --subtitle-color: #d0d0d0;
+        --scrollbar-color: #687582;
+        --scrollbar-hover-color: #9da8b3;
+        --button-bg-color: transparent;
+        --button-hover-bg-color: #46647e;
+        --highlight-bg-color: #303030;
+        --inlinecode-bg-color: rgba(99, 110, 123, 0.4);
+        --fold-title-color: #c4c6c9;
+        --fold-border-color: #435266;
+    }
+
+    [data-user-color-scheme="dark"] img {
+        -webkit-filter: brightness(0.9);
+        filter: brightness(0.9);
+        transition: filter 0.2s ease-in-out;
+    }
+
+    [data-user-color-scheme="dark"] .license-box {
+        background-color: rgba(62, 75, 94, 0.35);
+        transition: background-color 0.2s ease-in-out;
+    }
+
+    [data-user-color-scheme="dark"] .gt-comment-admin .gt-comment-content {
+        background-color: transparent;
+        transition: background-color 0.2s ease-in-out;
+    }
+}

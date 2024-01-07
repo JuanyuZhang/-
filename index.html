@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客主页</title>
+    <link rel="icon" href="img/title.jpg">
+
+    <!-- 外部依赖 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+    <!-- 内部格式 -->
+    <link rel="stylesheet" href="css/main.css">
+    </link>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner" style="height: 100vh;">
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand " href="/">
+                        <strong>JuanyuZhang</strong>
+                    </a>
+                    <div class="navbar-collapse">
+                        <!-- 注意这里的 margin-left:auto实现右对齐 -->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="index.html" target="_self">
+                                    <i class="iconfont icon-home-fill"></i>
+                                    <span>主页</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="edit.html" target="_self">
+                                    <i class="iconfont icon-articles"></i>
+                                    <span>编辑</span>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="" target="_self">
+                                    <i class="iconfont icon-user-fill"></i>
+
+                                    <span>关于</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="" target="_self"> <i class="iconfont icon-tags-fill"></i>
+                                    <span>标签</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- 下面作一个轮播图banner -->
+            <!-- 背景图cover属性能做到全覆盖不重复 -->
+            <div id="banner" class="banner" parallax="true"
+                style="background: url('img/theme.jpg') no-repeat center; background-size: cover;">
+                <div class="mask">
+                    <div class="banner-text text-center fade-in-up">
+                        <div class="h2">
+
+                            <span id="subtitle" data-typed-text="白天和黑夜，只交替没交换。"></span>
+
+                        </div>
+
+
+                    </div>
+
+                    <div class="scroll-down-bar">
+                        <i class="iconfont icon-arrowdown"></i>
+                    </div>
+
+
+                </div>
+            </div>
+    </header>
+    <main>
+        <div class="container nopadding-x-md">
+            <div id="board" style="margin-top: 0;">
+                <!-- container用来控制容器格式，使得内部为flex并且外部保持和别的container的对齐 -->
+                <!-- 注意container是一个内容元素居中并且左右padding为15px的。宽度 根据屏幕大小来，但是不是连续变化的-->
+                <!-- container为了美观是剧中的。但是很多时候不知道父元素的设定，所以使用auto来自动计算 -->
+                <div class="container">
+                    <!-- row用来放置每一个博客的引言，确定的是每一个博客上下之间的距离 -->
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-12 m-auto">
+                            <div class="row index-card mx-auto">
+                                <!-- index-info是flex的。注意是竖着的，所以flex-direction是column -->
+                                <article class="col-12 mx-auto col-md-8 index-info">
+                                    <!-- 文章分为标题，摘录和日期。可以包括标签但是没有写那么多了 -->
+                                    <h2 class="index-header">
+                                        <a href="article1.html" target="_self">
+                                            中国人的性格
+                                        </a>
+                                    </h2>
+                                    <a class="index-excerpt">
+                                        <div>
+                                            中国人的性情是喜欢调和折中的，譬如你说，这屋子太暗，须在这里开一个窗，大家一定不允许的。但如果你主张拆掉屋顶他们就来调和，愿意开窗了。
+
+                                            而忽而这些都空虚了，但有时故意地填以没奈何的自欺的希望。希望，希望，用这希望的盾，抗拒那空虚中的暗夜的袭来，虽然盾后面也依然是空虚中的暗夜。
+
+                                            如果痛苦换来的是结识真理、坚持真理，就应自觉的欣然承受，那时，也只有那时，痛苦穿掘着灵魂的深处，使人受了精神底苦刑而得到创伤，又即从这得伤和养伤和愈合中，得到苦的涤除，而上了苏生的路。
+
+                                            当我沉默着的时候，我觉得充实；我将开口，同时感到空虚。过去的生命已经死亡。我对于这死亡有大欢喜，因为我借此知道它曾经存活。死亡的生命已经朽腐。我对于这朽腐有大欢喜，因为我借此知道它还非空虚。
+                                        </div>
+                                    </a>
+                                    <div class="index-btm post-metas">
+                                        <!-- 这里之所以加一个post-metas是因为这里只显示日期，但是还可以显示标签-->
+                                        <div class="post-meta mr-3">
+                                            <i class="iconfont icon-date"></i>
+                                            <time datetime="2023-12-25 18:30" >
+                                                2023-12-25
+                                            </time>
+                                        </div>
+
+
+
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-12 m-auto">
+                            <div class="row index-card mx-auto">
+                                <!-- index-info是flex的。注意是竖着的，所以flex-direction是column -->
+                                <article class="col-12 mx-auto col-md-8 index-info">
+                                    <!-- 文章分为标题，摘录和日期。可以包括标签但是没有写那么多了 -->
+                                    <h2 class="index-header">
+                                        <a href="article2.html" target="_self">
+                                           民间文学之意义
+                                        </a>
+                                    </h2>
+                                    <a class="index-excerpt">
+                                        <div>
+                                            民间文学是民众口头创作、口头传承的文学，具有口头性、集体性、传承性、变异性等四大特征，其中口头性是最核心的特征。跟作家的书面创作、书本传播相比，口头创作和传播是众人共同参与的过程，每一次讲述（或讲唱）都是一种创新，每一次表演都是一种再创作。每个人都可以加入表演队伍，在表演中加入自己的经验、情感和想象。
+                                            所以，我们说民间文学是一个在表演中不断汲取新思想的开放的意义系统。
+                                            正因为如此，民间文学能够建构社会记忆，成为体现社会记忆的标杆。
+                                        </div>
+                                    </a>
+                                    <div class="index-btm post-metas">
+                                        <!-- 这里之所以加一个post-metas是因为这里只显示日期，但是还可以显示标签-->
+                                        <div class="post-meta mr-3">
+                                            <i class="iconfont icon-date"></i>
+                                            <time datetime="2023-12-25 18:30">
+                                                2023-12-25
+                                            </time>
+                                        </div>
+
+
+
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <!--  -->
+                        <div class="col-12 m-auto">
+                            <div class="row index-card mx-auto">
+                                <!-- index-info是flex的。注意是竖着的，所以flex-direction是column -->
+                                <article class="col-12 mx-auto col-md-8 index-info">
+                                    <!-- 文章分为标题，摘录和日期。可以包括标签但是没有写那么多了 -->
+                                    <h2 class="index-header">
+                                        <a href="" target="_self">
+                                           量子力学的研究
+                                        </a>
+                                    </h2>
+                                    <a class="index-excerpt">
+                                        <div>
+                                            如果问20世纪物理学最伟大的成就有哪些，量子力学可以毫无争议地进入榜单。
+                                            然而，它反直觉的结论和晦涩的数学表达使得人们对它望而生畏。著名物理学家理查德·费曼曾经说过：“我想我可以肯定地说，
+                                            没人真正理解量子力学。”今天，笔者将从一个比较浅显的角度，带大家走进量子力学的大门，了解一些量子力学的基本概念和结论。
+                                        </div>
+                                    </a>
+                                    <div class="index-btm post-metas">
+                                        <!-- 这里之所以加一个post-metas是因为这里只显示日期，但是还可以显示标签-->
+                                        <div class="post-meta mr-3">
+                                            <i class="iconfont icon-date"></i>
+                                            <time datetime="2023-12-25 18:30" >
+                                                2023-12-25
+                                            </time>
+                                        </div>
+
+
+
+                                    </div>
+                                </article>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <a id="scroll-top-button">
+            <i class="iconfont icon-arrowup"></i>
+          </a>
+    </main>
+</body>
+<footer>
+    <div class="footer-inner">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank2"
+            viewBox="0 0 16 16">
+            <path
+                d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z">
+
+            </path>
+        </svg>
+        <p>张隽宇</p>
+
+
+
+    </div>
+
+</footer>
+<script src="js/anitation.js"></script>
+
+</html>

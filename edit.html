@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>博客主页</title>
+    <link rel="icon" href="img/title.jpg">
+
+    <!-- 外部依赖 -->
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_1749284_hj8rtnfg7um.css">
+    <!-- 内部格式 -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/edit.css">
+
+    <!-- markdown依赖 -->
+    <link rel="stylesheet" href="editor.md-master/css/editormd.min.css">
+    <link rel="stylesheet" href="editor.md-master/css/editormd.css">
+    <link rel="stylesheet" href="editor.md-master/css/style.css">
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="editor.md-master/lib/marked.min.js"></script>
+    <script src="editor.md-master/lib/prettify.min.js"></script>
+    <script src="editor.md-master/editormd.js"></script>
+    </link>
+</head>
+
+<body>
+    <header>
+        <div class="header-inner" style="height: 100vh;">
+            <nav id="navbar" class="navbar navbar-expand-lg fixed-top scrolling-navbar">
+                <div class="container">
+                    <a class="navbar-brand " href="/">
+                        <strong>JuanyuZhang</strong>
+                    </a>
+                    <div class="navbar-collapse">
+                        <!-- 注意这里的 margin-left:auto实现右对齐 -->
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="index.html" target="_self">
+                                    <i class="iconfont icon-home-fill"></i>
+                                    <span>主页</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="edit.html" target="_self">
+                                    <i class="iconfont icon-articles"></i>
+                                    <span>编辑</span>
+                                </a>
+                            </li>
+
+
+                            <li class="nav-item">
+                                <a class="nav-link" href="" target="_self">
+                                    <i class="iconfont icon-user-fill"></i>
+
+                                    <span>关于</span>
+                                </a>
+                            </li>
+                            <li class="nav-item">
+
+                                <a class="nav-link" href="" target="_self"> <i class="iconfont icon-tags-fill"></i>
+                                    <span>标签</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+            </nav>
+
+            <!-- 下面作一个轮播图banner -->
+            <!-- 背景图cover属性能做到全覆盖不重复 -->
+            <div id="banner" class="banner" parallax="true"
+                style="background: url('img/theme.jpg') no-repeat center; background-size: cover;">
+                <div class="mask">
+                    <div class="banner-text text-center fade-in-up">
+                        <div class="h2">
+
+                            <span id="subtitle" data-typed-text="白天和黑夜，只交替没交换。"></span>
+
+                        </div>
+                       
+                        
+
+                    </div>
+
+                    <div class="scroll-down-bar">
+                        <i class="iconfont icon-arrowdown"></i>
+                    </div>
+
+
+                </div>
+            </div>
+    </header>
+    <main>
+        <div class="container nopadding-x-md">
+            <div id="board" style="margin-top: 0;">
+
+                <div class="container">
+                    <div class="blog-edit-container mx-auto">
+                        <!-- 标题编辑区 -->
+                        <div class="title">
+                            <input type="text" placeholder="在这里写下文章标题" id="title">
+                            <input type="button" value="发布文章" id="submit">
+                        </div>
+                        <!-- 内容编辑区 -->
+                        <div id="editor">
+                            <textarea id="my-editormd-markdown-doc" name="my-editormd-markdown-doc">## 接口文档在线预览</textarea>
+                            <!-- 用于后端获取md稳当内容，Java中：request.getParameter("my-editormd-html-code")。 -->
+                            <textarea id="my-editormd-html-code" name="my-editormd-html-code" style="display:none;"></textarea>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+        <a id="scroll-top-button">
+            <i class="iconfont icon-arrowup"></i>
+        </a>
+    </main>
+</body>
+<script>
+    // 初始化 editor.md
+    let editor = editormd("editor", {
+
+        // 这里的尺寸必须在这里设置，设置样式会被 editormd 自动覆盖
+        width: "100%",
+        // 设定编辑高度
+        syncScrolling: "single",
+        height: "500px",
+        // 编辑页中的初始化内容
+        markdown: "# 在这里写下一篇博客",
+        //指定 editor.md 依赖的插件路径
+        path: "editor.md-master/lib/",
+        emoji: true,
+        saveHTMLToTextarea: true,//注意3：这个配置，方便post提交表单
+        imageUpload: true,
+        imageFormats: ["jpg", "jpeg", "gif", "png", "bmp", "webp"],
+
+    })
+    let submit = document.getElementById("submit");
+    submit.onclick = function () {
+        var fs = require('fs')
+
+        // API
+        fs.writeFile('hello.doc', 'hello', (error) => {
+
+            // 创建失败
+            if (error) {
+                console.log(`创建失败：${error}`)
+            }
+
+            // 创建成功
+            console.log(`创建成功！`)
+
+        })
+
+
+
+        //artic
+        //console.log(blogContent)
+
+    }
+
+</script>
+
+<footer>
+    <div class="footer-inner">
+
+        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-bank2"
+            viewBox="0 0 16 16">
+            <path
+                d="M8.277.084a.5.5 0 0 0-.554 0l-7.5 5A.5.5 0 0 0 .5 6h1.875v7H1.5a.5.5 0 0 0 0 1h13a.5.5 0 1 0 0-1h-.875V6H15.5a.5.5 0 0 0 .277-.916l-7.5-5zM12.375 6v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zm-2.5 0v7h-1.25V6h1.25zM8 4a1 1 0 1 1 0-2 1 1 0 0 1 0 2zM.5 15a.5.5 0 0 0 0 1h15a.5.5 0 1 0 0-1H.5z">
+
+            </path>
+        </svg>
+        <p>张隽宇</p>
+
+
+
+    </div>
+
+</footer>
+<script src="js/anitation.js"></script>
+
+</html>

@@ -1,0 +1,12 @@
+.blog-content{
+    box-sizing: border-box;
+    padding-left: 10%;
+    padding-right: 10%;
+}
+
+.blog-content p {
+    text-indent: 2em;
+    padding: 10px 0;
+    line-height: 34px;
+}
+
